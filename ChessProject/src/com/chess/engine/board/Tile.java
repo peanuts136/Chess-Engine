@@ -20,7 +20,7 @@ public abstract class Tile
     private static Map<Integer, emptyTile> createAllPossibleEmptyTiles()
     {
         final Map<Integer, emptyTile> emptyTileMap = new HashMap<>();
-        for(int i = 0; i < 64; i++)
+        for(int i = 0; i < BoardUtils.NUM_TILES; i++)
         {
             emptyTileMap.put(i, new emptyTile(i));
         }
@@ -35,7 +35,7 @@ public abstract class Tile
     }
 
 /**private constructor*/
-    private Tile(int tileCoordinate)
+    private Tile(final int tileCoordinate)
     {
         this.tileCoordinate = tileCoordinate;
     }
@@ -63,7 +63,7 @@ public abstract class Tile
     {
         /**private so no way to reference variable without a setter method*/
         private final Piece pieceOnTile;
-        private occupiedTile(int coordinate, Piece pieceOnTile)
+        private occupiedTile(int coordinate, final Piece pieceOnTile)
         {
             super(coordinate);
             this.pieceOnTile = pieceOnTile;
